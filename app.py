@@ -683,7 +683,7 @@ with col_sel:
     for _, g_d in mat["gases"].items():
         g_labels.append(g_d["short"])
         g_vals.append(calc_sensitivity(g_d, heater_temp_C, target_ppm))
-        g_cols.append(g_d["color"])
+        g_cols.append(g_d["hex"])
 
     fig_sel = go.Figure(
         data=[go.Bar(x=g_labels, y=g_vals, marker_color=g_cols, text=[f"{v:.1f}×" for v in g_vals], textposition="outside")]
